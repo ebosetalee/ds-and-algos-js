@@ -38,6 +38,7 @@ class LinkedList {
 
     remove(value) {
         // Finds the value and removes it
+        // returns true or false
         if (!this.head) {
             return false;
         }
