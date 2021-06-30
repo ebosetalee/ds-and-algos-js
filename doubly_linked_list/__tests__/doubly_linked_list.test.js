@@ -1,32 +1,20 @@
-import LinkedList from "../linkedList.js";
+//import { test } from "jest-circus";
+import DoublyLinkedList from "../doubly_linked_list";
 
-test("list is empty", () => {
-    const linkedList = new LinkedList();
+test("Empty List", () => {
+    const linkedList = new DoublyLinkedList();
     expect(linkedList.head).toBe(null);
     expect(linkedList.tail).toBe(null);
 });
 
-test("value of head", () => {
-    const linkedList = new LinkedList();
-    linkedList.add(3);
-    expect(linkedList.getHead().value).toBe(3);
-});
-
-test("value of tail", () => {
-    const linkedList = new LinkedList();
-    linkedList.add(3);
-    linkedList.add(4);
-    expect(linkedList.getTail().value).toBe(4);
-});
-
 test("Add One to the list", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(0);
     expect(linkedList.head.value).toBe(0);
 });
 
 test("Add two to the list", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(0);
     linkedList.add("1");
     expect(linkedList.head.next.value).toBe("1");
@@ -35,7 +23,7 @@ test("Add two to the list", () => {
 });
 
 test("Add to the beginning of the list", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(2);
     linkedList.add(4);
     linkedList.prepend(0);
@@ -44,7 +32,7 @@ test("Add to the beginning of the list", () => {
 });
 
 test("Remove Item from the head", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(5);
     linkedList.add(20);
     expect(linkedList.remove(5)).toBe(true);
@@ -52,7 +40,7 @@ test("Remove Item from the head", () => {
 });
 
 test("Remove item from Middle", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(2);
     linkedList.add(5);
     linkedList.add(8);
@@ -63,7 +51,7 @@ test("Remove item from Middle", () => {
 });
 
 test("Remove Item from the tail", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(2);
     linkedList.add(5);
     linkedList.add(8);
@@ -75,7 +63,7 @@ test("Remove Item from the tail", () => {
 });
 
 test("Remove item not in the list", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(2);
     linkedList.add(5);
     linkedList.add(8);
@@ -85,15 +73,23 @@ test("Remove item not in the list", () => {
     expect(linkedList.print()).toStrictEqual([2, 5, 8, 10, 20]);
 });
 
-test("Search for item at the head", () => {
-    const linkedList = new LinkedList();
+test("Find item in the list", () => {
+    const linkedList = new DoublyLinkedList();
     linkedList.add(2);
+    linkedList.add(6);
+    expect(linkedList.find(2).value).toBe(2);
+});
+
+test("Search for item at the head", () => {
+    const linkedList = new DoublyLinkedList();
+    linkedList.add(6);
     linkedList.add(5);
-    expect(linkedList.search(2)).toBe(true);
+    expect(linkedList.search(6)).toBe(true);
+    expect(linkedList.head.value).toBe(6);
 });
 
 test("Search for item in the middle", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(2);
     linkedList.add(5);
     linkedList.add(8);
@@ -102,7 +98,7 @@ test("Search for item in the middle", () => {
 });
 
 test("Search for item at the tail", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(22);
     linkedList.add(50);
     expect(linkedList.search(50)).toBe(true);
@@ -110,7 +106,7 @@ test("Search for item at the tail", () => {
 });
 
 test("Search for item not in the list", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(8);
     linkedList.add(10);
     linkedList.add(24);
@@ -119,12 +115,28 @@ test("Search for item not in the list", () => {
 });
 
 test("Print Empty List", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     expect(linkedList.print()).toStrictEqual([]);
 });
 
+test("Print items in the list", () => {
+    const linkedList = new DoublyLinkedList();
+    linkedList.add(2);
+    linkedList.add(8);
+    linkedList.add(12);
+    linkedList.add(20);
+    linkedList.add(58);
+    linkedList.add(50);
+    expect(linkedList.print()).toStrictEqual([2, 8, 12, 20, 58, 50]);
+});
+
+test("Print Empty List in reverse", () => {
+    const linkedList = new DoublyLinkedList();
+    expect(linkedList.backwards()).toStrictEqual([]);
+});
+
 test("Print list backwards", () => {
-    const linkedList = new LinkedList();
+    const linkedList = new DoublyLinkedList();
     linkedList.add(8);
     linkedList.add(12);
     linkedList.add(20);
