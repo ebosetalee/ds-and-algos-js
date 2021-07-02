@@ -94,21 +94,3 @@ class LinkedList {
 }
 
 export default LinkedList;
-
-// const my_list = new LinkedList();
-// my_list.print();
-
-// my_list.add(0);
-
-// my_list.add(1);
-// my_list.add(2);
-// my_list.add(3);
-// my_list.add(4);
-
-// console.log(my_list.getHead())
-// console.log("search is",my_list.search(4))
-// console.log(my_list.print());
-// console.log(my_list.remove(0));
-// console.log(my_list.getTail());
-// console.log(my_list.print());
-// console.log(my_list.backwards())

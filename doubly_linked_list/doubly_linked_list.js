@@ -70,19 +70,5 @@ class DoublyLinkedList extends LinkedList {
         return null;
     }
 }
-// const my_list = new DoublyLinkedList();
-// console.log(my_list.head);
-// console.log(my_list.add(2));
-// console.log(my_list.head.value);
-// my_list.add(5);
-// console.log(my_list.search(7));
-// my_list.prepend(0);
-// my_list.add(7);
-// console.log(my_list.remove(0));
-// console.log(my_list.getHead());
-// console.log(my_list.getTail());
-// console.log(my_list.find(5).previous.value); // Interesting!!!
-// console.log(my_list.print());
-// console.log(my_list.backwards());
 
 export default DoublyLinkedList;
