@@ -18,7 +18,7 @@ test("Push to non empty stack", () => {
     const stack = new Stack();
     expect(stack.items.head).toBeNull();
     stack.push(3);
-    expect(stack.items.head.value).toBe(3);
+    expect(stack.items.head).not.toBeNull();
     stack.push(7);
     expect(stack.items.tail.value).toBe(7);
 });
